@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>DOUS</title>
   <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
 
 </head>
@@ -24,8 +24,8 @@
   h1 {
     margin: 50px 0 50px 0;
     font-size: 5rem;
-    color: rgb(32, 183, 93);
-    -webkit-text-stroke: .5px black;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: .5px whitesmoke;
   }
   input {
     margin-bottom: 20px;
@@ -83,7 +83,7 @@
   .left-container {
     flex: 3;
     padding: 2rem;
-    background-color: #ffee00;
+    background-color: #EBDC15;
     color: #000000;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
@@ -101,7 +101,7 @@
 
 <body>
 <div class = "left-container">
-  <h1>Tic-Tac-Toe</h1>
+  <h1>Dous, real time Online Game</h1>
   <div style="display: flex; width: 95vw; position: relative;">
     <p id="userCont">You : <span id="user"></span></p>
     <p style="position: absolute; right: 0;" id="oppNameCont">Opponent : <span id="oppName"></span></p>
@@ -134,15 +134,14 @@
 </div>
 <div class = "right-container">
   <header>
-    <h1>P2P Chat</h1>
+    <h1>Chat</h1>
   </header>
-  <p>Here you can chat with your peers with a P2P connection.</p>
+  <p>Here you can chat with your peers with a Client-server connection.</p>
   <ul id="messages"></ul>
   <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
   </form>
   <a href="/chat-example-master/tictactoe.html">
-    <button>Asteroid Game: By Juan</button>
   </a>
 </div>
 </body>
@@ -283,7 +282,6 @@
     document.getElementById("btn7").innerText == '' ? b7 = "g" : b7 = document.getElementById("btn7").innerText
     document.getElementById("btn8").innerText == '' ? b8 = "h" : b8 = document.getElementById("btn8").innerText
     document.getElementById("btn9").innerText == '' ? b9 = "i" : b9 = document.getElementById("btn9").innerText
-
 
     if ((b1 == b2 && b2 == b3) || (b4 == b5 && b5 == b6) || (b7 == b8 && b8 == b9) || (b1 == b4 && b4 == b7) || (b2 == b5 && b5 == b8) || (b3 == b6 && b6 == b9) || (b1 == b5 && b5 == b9) || (b3 == b5 && b5 == b7)) {
       socket.emit("gameOver", { name: name })
